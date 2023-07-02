@@ -38,4 +38,15 @@ module PrivateEmbed
       parse_html(html, uri.to_s)
     end
   end
+
+  module FinalDestinationInstanceMethods
+    private
+    def uri(location)
+      begin
+        return @uri + location if @uri
+        URI.parse(location)
+      rescue URI::Error
+      end
+    end
+  end
 end

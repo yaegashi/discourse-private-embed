@@ -18,4 +18,8 @@ after_initialize do
   class ::TopicEmbed
     singleton_class.prepend PrivateEmbed::TopicEmbedClassMethods
   end
+
+  class ::FinalDestination
+    prepend PrivateEmbed::FinalDestinationInstanceMethods
+  end
 end
